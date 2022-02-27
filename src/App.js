@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
     <div className="App">
-      <h2>dashboard</h2>
+     <Dashboard></Dashboard>
     </div>
   );
 }
