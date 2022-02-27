@@ -15,7 +15,16 @@ import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-
+import { padding } from "@mui/system";
+import Profile from "../../Profile/Profile";
+import { CardMedia } from "@material-ui/core";
+import user from '../../../images/user_img.jfif'
+import { Col, Row } from 'reactstrap';
+import CircleRoundedIcon from "@mui/icons-material/CircleRounded";
+import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
+import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined";
+import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
+import PermScanWifiOutlinedIcon from "@mui/icons-material/PermScanWifiOutlined";
 const drawerWidth = 240;
 
 function Dashboard(props) {
@@ -25,33 +34,72 @@ function Dashboard(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+    const avatarStyle = {
+        color: "#037B21 ",
+        height: "15px"
+        
+    };
+    const dashAvatar = {
+        background: "#530395 ",
+        margin:"20px"
+    };
   const drawer = (
     <div>
-      <Box
-        component="main"
-        sx={{
-          flexGrow: 1,
-          p: 3,
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-        }}
-      >
-        <Toolbar />
-        <Typography paragraph>content here</Typography>
+      <Box>
+        <Row style={{ display: "flex", background: "#022C18 " }}>
+          <Col>
+            <CardMedia
+              style={{
+                marginTop: "20px",
+                height: "50px",
+                width: "50px",
+                borderRadius: "50%",
+              }}
+              component="img"
+              image={user}
+              alt="green iguana"
+            />
+          </Col>
+          <Col>
+            <Typography
+              style={{ marginTop: "30px", marginLeft: "10px", color: "white" }}
+            >
+              Jhon Smith
+            </Typography>
+            <Typography>
+              <CircleRoundedIcon style={avatarStyle} />
+              <span style={{ color: "#037B21" }}>online</span>
+            </Typography>
+          </Col>
+        </Row>
       </Box>
-      <Toolbar />
-      <Divider />
-      <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+
+      <List style={{ backgroundColor: "black" }}>
+        <ListItem
+          style={{ color: "wheat", padding: "10px,10px", marginTop: "20px" }}
+        >
+          <DashboardOutlinedIcon style={{ color: "#F76D02  " }} />
+          <span style={{ marginLeft: "10px" }}>Dashboard</span>{" "}
+          <ArrowDropDownOutlinedIcon />
+        </ListItem>
+        <ListItem style={{ color: "wheat", marginTop: "20px" }}>
+          <AccessTimeOutlinedIcon style={{ color: "#F10804 " }} />
+          <span style={{ marginLeft: "10px" }}>Enterprise setup</span>
+        </ListItem>
+        <ListItem style={{ color: "wheat", marginTop: "20px" }}>
+          <PermScanWifiOutlinedIcon style={{ color: "#530395" }} />
+          
+        </ListItem>
+        <ListItem style={{ color: "wheat" }}>exit</ListItem>
+        {/* {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
-        ))}
+        ))} */}
       </List>
-      <Divider />
     </div>
   );
 
@@ -111,15 +159,10 @@ function Dashboard(props) {
             </Drawer>
           </Box>
           <Box
-            component="main"
-            sx={{
-              flexGrow: 1,
-              p: 3,
-              width: { sm: `calc(100% - ${drawerWidth}px)` },
-            }}
+            
           >
-            <Toolbar />
-            <Typography paragraph>content here</Typography>
+           <Profile></Profile>
+            
           </Box>
           <Box
             component="main"
