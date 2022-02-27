@@ -25,6 +25,11 @@ import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import PermScanWifiOutlinedIcon from "@mui/icons-material/PermScanWifiOutlined";
+import GridOnOutlinedIcon from "@mui/icons-material/GridOnOutlined";
+import NfcOutlinedIcon from "@mui/icons-material/NfcOutlined";
+
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+
 const drawerWidth = 240;
 
 function Dashboard(props) {
@@ -35,13 +40,14 @@ function Dashboard(props) {
     setMobileOpen(!mobileOpen);
   };
     const avatarStyle = {
-        color: "#037B21 ",
-        height: "15px"
-        
+      color: "#68CD02 ",
+        height: "15px",
+      
     };
     const dashAvatar = {
         background: "#530395 ",
-        margin:"20px"
+        margin: "20px"
+        
     };
   const drawer = (
     <div>
@@ -64,11 +70,11 @@ function Dashboard(props) {
             <Typography
               style={{ marginTop: "30px", marginLeft: "10px", color: "white" }}
             >
-              Jhon Smith
+              Faiz Ullah
             </Typography>
-            <Typography>
+            <Typography style={{ textAlign: "left" }}>
               <CircleRoundedIcon style={avatarStyle} />
-              <span style={{ color: "#037B21" }}>online</span>
+              <span style={{ color: "#68CD02" }}>online</span>
             </Typography>
           </Col>
         </Row>
@@ -85,20 +91,29 @@ function Dashboard(props) {
         <ListItem style={{ color: "wheat", marginTop: "20px" }}>
           <AccessTimeOutlinedIcon style={{ color: "#F10804 " }} />
           <span style={{ marginLeft: "10px" }}>Enterprise setup</span>
+          <ArrowDropDownOutlinedIcon />
         </ListItem>
         <ListItem style={{ color: "wheat", marginTop: "20px" }}>
           <PermScanWifiOutlinedIcon style={{ color: "#530395" }} />
-          
+          <span style={{ marginLeft: "10px" }}>Compiling Management</span>{" "}
         </ListItem>
-        <ListItem style={{ color: "wheat" }}>exit</ListItem>
-        {/* {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))} */}
+        <ListItem style={{ color: "wheat", marginTop: "20px" }}>
+          <GridOnOutlinedIcon style={{ color: "#DB0278 " }} />
+          <span style={{ marginLeft: "10px" }}>
+            Profile Building & sales
+          </span>{" "}
+        </ListItem>
+        <ListItem style={{ color: "wheat", marginTop: "20px" }}>
+          <NfcOutlinedIcon style={{ color: "#037FDC " }} />
+          <span style={{ marginLeft: "5px" }}>Financial Management</span>{" "}
+          <ArrowDropDownOutlinedIcon
+            style={{ width: "13px", height: "30px" }}
+          />
+        </ListItem>
+        <ListItem style={{ color: "wheat", marginTop: "20px" }}>
+          <SettingsOutlinedIcon style={{ color: "#F76D02" }} />
+          <span style={{ marginLeft: "10px" }}>Exit</span>
+        </ListItem>
       </List>
     </div>
   );
